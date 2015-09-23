@@ -62,6 +62,7 @@
 		2EF053B41B568BC900FD86F7 /* post.bin in Resources */ = {isa = PBXBuildFile; fileRef = 2EF053B31B568BC900FD86F7 /* post.bin */; };
 		2EF27BF21B68DBFC00586877 /* DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF27BF11B68DBFC00586877 /* DES.m */; };
 		2EF27BF91B68F62600586877 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF27BF71B68F62600586877 /* GTMBase64.m */; };
+		2EFC95741BB027A400C6540C /* DataKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFC95731BB027A400C6540C /* DataKVO.m */; };
 		71E58B702FABA3F9400C320C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 076BBA5A9E515A79B49AAF57 /* libPods.a */; };
 		F4E7CA261B27DD02007D535E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7CA251B27DD02007D535E /* main.m */; };
 		F4E7CA291B27DD02007D535E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7CA281B27DD02007D535E /* AppDelegate.m */; };
@@ -194,6 +195,8 @@
 		2EF27BF61B68F62600586877 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		2EF27BF71B68F62600586877 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		2EF27BF81B68F62600586877 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		2EFC95721BB027A400C6540C /* DataKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataKVO.h; sourceTree = "<group>"; };
+		2EFC95731BB027A400C6540C /* DataKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataKVO.m; sourceTree = "<group>"; };
 		680B439FDDA90EADE507F4A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F417B7D91B2AA37900CB2DE5 /* DemoDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDefine.h; sourceTree = "<group>"; };
 		F4E7CA201B27DD02007D535E /* IPhoneDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPhoneDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +277,8 @@
 			children = (
 				2E25FC4A1B429CF60081CA9D /* NTPictureInfo.h */,
 				2E25FC4B1B429CF60081CA9D /* NTPictureInfo.m */,
+				2EFC95721BB027A400C6540C /* DataKVO.h */,
+				2EFC95731BB027A400C6540C /* DataKVO.m */,
 			);
 			path = NTModel;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 				TargetAttributes = {
 					F4E7CA1F1B27DD02007D535E = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 35B2KE884X;
 					};
 					F4E7CA381B27DD02007D535E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -654,6 +660,7 @@
 				2E52F9391B32A4A500A66AF4 /* NTMapAnnotation.m in Sources */,
 				2E5F11D61B5DEFC800DC14B3 /* SBJsonWriter.m in Sources */,
 				2E52F9331B32A42000A66AF4 /* NTMapViewController.m in Sources */,
+				2EFC95741BB027A400C6540C /* DataKVO.m in Sources */,
 				F4E7CA261B27DD02007D535E /* main.m in Sources */,
 				2E25FC4C1B429CF60081CA9D /* NTPictureInfo.m in Sources */,
 				2E25FC5D1B429D0A0081CA9D /* IndexViewController.m in Sources */,
@@ -798,6 +805,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${J2OBJC_HOME}/include\"",
@@ -817,7 +826,7 @@
 					"\"${J2OBJC_HOME}/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eb99e48d-4b6b-41be-b366-d9738fd914e7";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
@@ -828,6 +837,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${J2OBJC_HOME}/include\"",
@@ -847,7 +858,7 @@
 					"\"${J2OBJC_HOME}/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eb99e48d-4b6b-41be-b366-d9738fd914e7";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;

@@ -10,40 +10,39 @@
 #import "UserViewController.h"
 #import "TabViewController.h"
 
-@interface TabViewController ()
-{
-    UINavigationController* indexNaviController;
-    UINavigationController* orderNaviController;
-    UINavigationController* userNaviController;
+@interface TabViewController () {
+    UINavigationController *indexNaviController;
+    UINavigationController *orderNaviController;
+    UINavigationController *userNaviController;
 }
 @end
 
 @implementation TabViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
-    IndexViewController* indexViewController = [[IndexViewController alloc] init];
+    IndexViewController *indexViewController = [[IndexViewController alloc] init];
     indexNaviController = [[UINavigationController alloc] initWithRootViewController:indexViewController];
     indexNaviController.title = indexViewController.title;
-    
-    OrderViewController* orderViewController = [[OrderViewController alloc] init];
+
+    OrderViewController *orderViewController = [[OrderViewController alloc] init];
     orderNaviController = [[UINavigationController alloc] initWithRootViewController:orderViewController];
     orderNaviController.title = orderViewController.title;
-    
-    UserViewController* userViewController = [[UserViewController alloc] init];
+
+    UserViewController *userViewController = [[UserViewController alloc] init];
     userNaviController = [[UINavigationController alloc] initWithRootViewController:userViewController];
     userNaviController.title = userViewController.title;
-    
-    self.viewControllers = @[indexNaviController,orderNaviController,userNaviController];
+
+    self.viewControllers = @[ orderNaviController, indexNaviController, userNaviController ];
     self.delegate = self;
     self.selectedIndex = 0;
-    
 }
 
 #pragma mark UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    NSLog(@"%@",viewController.title);
+    NSLog(@"%@", viewController.title);
 }
 @end

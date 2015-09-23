@@ -9,13 +9,22 @@
 #import "OrderViewController.h"
 #import "DemoDefine.h"
 #import "Masonry.h"
+#import "DataKVO.h"
 
-@interface OrderViewController () <UIAlertViewDelegate, UITextFieldDelegate>
+@interface OrderViewController () <UIAlertViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate>
 @property (nonatomic, strong) UITextField *txtInput;
-@property (nonatomic, strong) UIButton *btnTest;
+@property (nonatomic, strong) NSArray *btnArrays;
+@property (nonatomic, strong) UIViewController *controller;
+
+@property (nonatomic, strong) DataKVO *kvo;
 @end
 
 @implementation OrderViewController
+
+- (void)dealloc
+{
+    [_kvo removeObserver:self forKeyPath:@"stockName"];
+}
 
 - (id)init
 {
@@ -44,45 +53,157 @@
     [_txtInput mas_makeConstraints:^(MASConstraintMaker *make) {
       make.centerX.equalTo(self.view.mas_centerX);
       make.centerY.equalTo(self.view.mas_centerY).offset(-40);
-      make.size.mas_equalTo(CGSizeMake(100, 30));
+      make.size.mas_equalTo(CGSizeMake(150, 40));
     }];
 
-    self.btnTest = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_btnTest setTitle:@"test" forState:UIControlStateNormal];
-    [_btnTest setBackgroundColor:[UIColor greenColor]];
-    [_btnTest addTarget:self action:@selector(btnTestClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_btnTest];
+    self.kvo = [[DataKVO alloc] init];
+    [_kvo setValue:@"netease" forKey:@"stockName"];
+    [_kvo addObserver:self forKeyPath:@"stockName" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
 
-    [_btnTest mas_makeConstraints:^(MASConstraintMaker *make) {
-      make.size.mas_equalTo(CGSizeMake(100, 30));
-      make.centerX.equalTo(_txtInput.mas_centerX);
-      make.top.equalTo(_txtInput.mas_bottom);
-    }];
+    self.btnArrays = @[ @[ @0, @"test", @"btnTestClick" ],
+                        @[ @1, @"跳转到火车票", @"btnToTrainClick" ],
+                        @[ @2, @"跳转到众筹", @"btnToCrowFundingClick" ],
+                        @[ @3, @"presentTest", @"btnPresentTestClick" ],
+                        @[ @4, @"KVO Test", @"btnKVOTestClick" ] ];
+
+    UIView *preView = _txtInput;
+    for (int i = 0; i < _btnArrays.count; i++) {
+        NSArray *subArray = _btnArrays[i];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setTitle:subArray[1] forState:UIControlStateNormal];
+        [btn setBackgroundColor:[UIColor colorWithRed:0.5465 green:0.5328 blue:1.0 alpha:1.0]];
+        [btn addTarget:self action:NSSelectorFromString(subArray[2]) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+          make.size.mas_equalTo(CGSizeMake(150, 40));
+          make.centerX.equalTo(preView.mas_centerX);
+          make.top.equalTo(preView.mas_bottom).offset(10);
+        }];
+        preView = btn;
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqual:@"stockName"]) {
+        _txtInput.text = [_kvo valueForKey:@"stockName"];
+    }
+}
+
+- (void)btnKVOTestClick
+{
+    [_kvo setValue:[NSString stringWithFormat:@"crowd found %d", arc4random()] forKey:@"stockName"];
+}
+
+- (void)btnPresentTestClick
+{
+    UIViewController *vc = [[UIViewController alloc] init];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(controllerClick:)];
+    [vc.view addGestureRecognizer:tapGesture];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)controllerClick:(id)sender
+{
+    UITapGestureRecognizer *tap = (UITapGestureRecognizer *)sender;
+    UIView *view = tap.view;
+    UIResponder *responser = [view nextResponder];
+    UIViewController *vc = (UIViewController *)responser;
+    [vc dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)popViewPorTimer
+{
+    UIViewController *controller = [[UIViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)btnTestClick
 {
     [_txtInput resignFirstResponder];
+    //    if ([[[UIDevice currentDevice] systemVersion] intValue] >= 8.0) {
+    //        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert];
+    //        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+    //                                                               style:UIAlertActionStyleDefault
+    //                                                             handler:^(UIAlertAction *action) {
+    //                                                               UIViewController *controller = [[UIViewController alloc] init];
+    //                                                               [self.navigationController pushViewController:controller animated:YES];
+    //                                                             }];
+    //
+    //        [alert addAction:cancelAction];
+    //        [self presentViewController:alert animated:YES completion:nil];
+    //    }
+    //    else {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"cacel" otherButtonTitles:nil, nil];
+    [alert becomeFirstResponder];
     [alert show];
+    //    }
+}
+
+- (void)btnToTrainClick
+{
+    NSURL *url = [NSURL URLWithString:@"train163://mainOrder"];
+    //    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    //    NSURLConnection *connect = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    //    [connect start];
+
+    if ([[UIApplication sharedApplication]
+            canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
+
+- (void)btnToCrowFundingClick
+{
+    //    NSURL *url = [NSURL URLWithString:@"cf163://userAccount"];
+    //    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    //    NSURLConnection *connect = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    //    [connect start];
+    NSURL *url = [NSURL URLWithString:@"cf163://userAccount"];
+    if ([[UIApplication sharedApplication]
+            canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
+
+#pragma mark NSURLConnectionDelegate
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"error:%@", error);
+}
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"getdata===");
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"finish load data");
 }
 
 #pragma mark UIAlertViewDelegate
 - (void)willPresentAlertView:(UIAlertView *)alertView
 {
+    NSLog(@"%s", __func__);
 }
 - (void)didPresentAlertView:(UIAlertView *)alertView
 {
+    NSLog(@"%s", __func__);
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    UIViewController *controller = [[UIViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
+    [self performSelector:@selector(popViewPorTimer) withObject:nil afterDelay:0.001];
+    //    NSTimer *testTimer = [NSTimer scheduledTimerWithTimeInterval:.001 target:self selector:@selector(popViewPorTimer) userInfo:nil repeats:NO];
 }
 #pragma mark UITextfieldDelegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    NSLog(@"%s", __func__);
+}
 - (void)textFieldDidEndEditing:(UITextField *)textField;
 {
-    NSLog(@"%@", textField.text);
+    NSLog(@"%s", __func__);
 }
 
 - (void)textFieldDidChanged:(UITextField *)sender
