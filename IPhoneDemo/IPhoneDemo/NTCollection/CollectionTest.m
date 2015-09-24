@@ -10,7 +10,7 @@
 
 @implementation CollectionTest
 
--(void)doBlockTest:(void (^)(int))testBlock
+- (void)doBlockTest:(void (^)(int))testBlock
 {
     if (testBlock) {
         testBlock(5);
