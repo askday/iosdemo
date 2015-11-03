@@ -10,6 +10,7 @@
 #import "DemoDefine.h"
 #import "Masonry.h"
 #import "DataKVO.h"
+#import "MMPlaceHolder.h"
 
 @interface OrderViewController () <UIAlertViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate>
 @property (nonatomic, strong) UITextField *txtInput;
@@ -81,6 +82,8 @@
         }];
         preView = btn;
     }
+
+    [self.view showPlaceHolder];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -160,7 +163,11 @@
     //    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     //    NSURLConnection *connect = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     //    [connect start];
-    NSURL *url = [NSURL URLWithString:@"cf163://userAccount"];
+    NSString *strUrl = @"cf163://mainCreditor/creditorDetail?productId=20151028144506PD252561";
+    strUrl = @"cf163://mainUser/userAccount?isHeadNeedRefresh=1";
+    strUrl = @"cf163://mainUser/userAssets";
+    strUrl = @"cf163://mainUser/aboutUs";
+    NSURL *url = [NSURL URLWithString:strUrl];
     if ([[UIApplication sharedApplication]
             canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];

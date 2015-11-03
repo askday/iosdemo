@@ -25,6 +25,7 @@
     if (self) {
         self.title = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
         self.view.backgroundColor = [UIColor whiteColor];
+        [self isKindOfClass:[NSString class]];
     }
     return self;
 }

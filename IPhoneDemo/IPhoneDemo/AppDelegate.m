@@ -73,7 +73,7 @@
     [window makeKeyAndVisible];
 
     //wax框架代码引用测试
-    //    [[LDPatchService sharedManager] startNetpatchWithAppcode:[appDictionary objectForKey:@"CFBundleShortVersionString"] andAppVersion:[appDictionary objectForKey:@"CFBundleVersion"]];
+//        [[LDPatchService sharedManager] startNetpatchWithAppcode:[appDictionary objectForKey:@"CFBundleShortVersionString"] andAppVersion:[appDictionary objectForKey:@"CFBundleVersion"]];
 
     UITapGestureRecognizer *tabbed = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     tabbed.delegate = self;
