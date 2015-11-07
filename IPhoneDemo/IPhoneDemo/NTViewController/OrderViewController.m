@@ -53,7 +53,7 @@
     [self.view addSubview:_txtInput];
     [_txtInput mas_makeConstraints:^(MASConstraintMaker *make) {
       make.centerX.equalTo(self.view.mas_centerX);
-      make.centerY.equalTo(self.view.mas_centerY).offset(-40);
+      make.centerY.equalTo(self.view.mas_centerY).offset(-140);
       make.size.mas_equalTo(CGSizeMake(150, 40));
     }];
 
@@ -65,7 +65,8 @@
                         @[ @1, @"跳转到火车票", @"btnToTrainClick" ],
                         @[ @2, @"跳转到众筹", @"btnToCrowFundingClick" ],
                         @[ @3, @"presentTest", @"btnPresentTestClick" ],
-                        @[ @4, @"KVO Test", @"btnKVOTestClick" ] ];
+                        @[ @4, @"KVO Test", @"btnKVOTestClick" ],
+                        @[ @5, @"模拟推送", @"btnNotifyTestClick" ] ];
 
     UIView *preView = _txtInput;
     for (int i = 0; i < _btnArrays.count; i++) {
@@ -171,6 +172,44 @@
     if ([[UIApplication sharedApplication]
             canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
+    }
+}
+
+- (void)btnNotifyTestClick
+{
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound)categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:userNotificationSettings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+
+        //小于8.0
+    }
+    else {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound];
+    }
+
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    //设置10秒之后
+    NSDate *pushDate = [NSDate dateWithTimeIntervalSinceNow:10];
+    if (notification != nil) {
+        // 设置推送时间
+        notification.fireDate = pushDate;
+        // 设置时区
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        // 设置重复间隔
+        notification.repeatInterval = kCFCalendarUnitDay;
+        // 推送声音
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        // 推送内容
+        notification.alertBody = @"推送内容";
+        //显示在icon上的红色圈中的数子
+        notification.applicationIconBadgeNumber = 1;
+        //设置userinfo 方便在之后需要撤销的时候使用
+        NSDictionary *info = [NSDictionary dictionaryWithObject:@"cf163://mainCreditor/creditorDetail?productId=20151028144506PD252561" forKey:@"url"];
+        notification.userInfo = info;
+        //添加推送到UIApplication
+        UIApplication *app = [UIApplication sharedApplication];
+        [app scheduleLocalNotification:notification];
     }
 }
 

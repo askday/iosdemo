@@ -73,7 +73,7 @@
     [window makeKeyAndVisible];
 
     //wax框架代码引用测试
-//        [[LDPatchService sharedManager] startNetpatchWithAppcode:[appDictionary objectForKey:@"CFBundleShortVersionString"] andAppVersion:[appDictionary objectForKey:@"CFBundleVersion"]];
+    //        [[LDPatchService sharedManager] startNetpatchWithAppcode:[appDictionary objectForKey:@"CFBundleShortVersionString"] andAppVersion:[appDictionary objectForKey:@"CFBundleVersion"]];
 
     UITapGestureRecognizer *tabbed = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     tabbed.delegate = self;
@@ -115,6 +115,15 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    //推送测试
+    if (notification.userInfo[@"url"]) {
+        NSURL *launchUrl = [NSURL URLWithString:notification.userInfo[@"url"]];
+        [[UIApplication sharedApplication] openURL:launchUrl];
+    }
 }
 
 #pragma mark flashViewDelegate
