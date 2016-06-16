@@ -21,7 +21,6 @@
 		2E25FC611B429D0A0081CA9D /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E25FC591B429D0A0081CA9D /* TabViewController.m */; };
 		2E25FC621B429D0A0081CA9D /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E25FC5B1B429D0A0081CA9D /* UserViewController.m */; };
 		2E25FC661B429D230081CA9D /* CollectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E25FC651B429D230081CA9D /* CollectionTest.m */; };
-		2E25FC691B429D360081CA9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E25FC681B429D360081CA9D /* Images.xcassets */; };
 		2E25FC6D1B429F3A0081CA9D /* NTPullScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E25FC6C1B429F3A0081CA9D /* NTPullScrollView.m */; };
 		2E25FC701B42AC6A0081CA9D /* NTAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E25FC6F1B42AC6A0081CA9D /* NTAutoScrollView.m */; };
 		2E3B22EA1B61E55200E2F182 /* NSData+NTBasicAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B22E91B61E55200E2F182 /* NSData+NTBasicAdditions.m */; };
@@ -44,26 +43,18 @@
 		2E5F11D61B5DEFC800DC14B3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F11D21B5DEFC800DC14B3 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2E5F11DB1B5E1EB400DC14B3 /* NSData+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F11D81B5E1EB400DC14B3 /* NSData+AESCrypt.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2E5F11DC1B5E1EB400DC14B3 /* NSString+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F11DA1B5E1EB400DC14B3 /* NSString+AESCrypt.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2E7019E71B3D558300581E09 /* Test.java in Sources */ = {isa = PBXBuildFile; fileRef = 2E7019E61B3D558300581E09 /* Test.java */; };
 		2E7019EB1B3D5CB100581E09 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7019EA1B3D5CB100581E09 /* libz.dylib */; };
-		2E7260DC1B9056E200696D91 /* MyInterface.java in Sources */ = {isa = PBXBuildFile; fileRef = 2E7260DB1B9056E200696D91 /* MyInterface.java */; };
 		2E78E20A1B33BBD8003C576A /* NTMapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E78E2091B33BBD8003C576A /* NTMapOverlay.m */; };
 		2E78E20D1B33BC76003C576A /* NTMapOverlayRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E78E20C1B33BC76003C576A /* NTMapOverlayRender.m */; };
 		2E7E68F11B411E680054CB47 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7E68F01B411E680054CB47 /* libicucore.dylib */; };
 		2E7E68F31B411E730054CB47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7E68F21B411E730054CB47 /* UIKit.framework */; };
 		2E82DE6F1B60E508003BD367 /* NSData+IDZGunzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E82DE6E1B60E508003BD367 /* NSData+IDZGunzip.m */; };
 		2E82DE721B60E765003BD367 /* NSDataGZipAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E82DE711B60E765003BD367 /* NSDataGZipAdditions.m */; };
-		2E8A93431B43820900E86BAB /* Other.java in Sources */ = {isa = PBXBuildFile; fileRef = 2E8A93421B43820900E86BAB /* Other.java */; };
-		2E8A93471B43EA2F00E86BAB /* NTWebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8A93461B43EA2F00E86BAB /* NTWebRequest.m */; };
-		2ECAE8061B78494B002E8578 /* TLS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2ECAE8051B78494B002E8578 /* TLS.mm */; };
 		2ECDDDB91B7C9A08007208B5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDDDB81B7C9A08007208B5 /* QuartzCore.framework */; };
-		2EF053B01B56656C00FD86F7 /* NTCryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF053AF1B56656C00FD86F7 /* NTCryptUtil.m */; };
-		2EF053B21B5689F600FD86F7 /* key.bin in Resources */ = {isa = PBXBuildFile; fileRef = 2EF053B11B5689F600FD86F7 /* key.bin */; };
-		2EF053B41B568BC900FD86F7 /* post.bin in Resources */ = {isa = PBXBuildFile; fileRef = 2EF053B31B568BC900FD86F7 /* post.bin */; };
 		2EF27BF21B68DBFC00586877 /* DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF27BF11B68DBFC00586877 /* DES.m */; };
 		2EF27BF91B68F62600586877 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF27BF71B68F62600586877 /* GTMBase64.m */; };
 		2EFC95741BB027A400C6540C /* DataKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFC95731BB027A400C6540C /* DataKVO.m */; };
-		71E58B702FABA3F9400C320C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 076BBA5A9E515A79B49AAF57 /* libPods.a */; };
+		6E7B492AA3B27F0F78EFE5C7 /* libPods-IPhoneDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D46ABB593B868B2E57383AAA /* libPods-IPhoneDemo.a */; };
 		F4E7CA261B27DD02007D535E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7CA251B27DD02007D535E /* main.m */; };
 		F4E7CA291B27DD02007D535E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7CA281B27DD02007D535E /* AppDelegate.m */; };
 		F4E7CA2C1B27DD02007D535E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7CA2B1B27DD02007D535E /* ViewController.m */; };
@@ -96,8 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		076BBA5A9E515A79B49AAF57 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		113ECB10A3745C4D1491A1FA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		03BB51A6148E325E54FABD24 /* Pods-IPhoneDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPhoneDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IPhoneDemo/Pods-IPhoneDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2E0475281B3016060078F6D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2E1301031B8D8BE600C65FF6 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		2E1301041B8D8BE600C65FF6 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
@@ -123,7 +113,6 @@
 		2E25FC5B1B429D0A0081CA9D /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		2E25FC641B429D230081CA9D /* CollectionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTest.h; sourceTree = "<group>"; };
 		2E25FC651B429D230081CA9D /* CollectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTest.m; sourceTree = "<group>"; };
-		2E25FC681B429D360081CA9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E25FC6B1B429F3A0081CA9D /* NTPullScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPullScrollView.h; sourceTree = "<group>"; };
 		2E25FC6C1B429F3A0081CA9D /* NTPullScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPullScrollView.m; sourceTree = "<group>"; };
 		2E25FC6E1B42AC6A0081CA9D /* NTAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTAutoScrollView.h; sourceTree = "<group>"; };
@@ -181,15 +170,7 @@
 		2E82DE701B60E765003BD367 /* NSDataGZipAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataGZipAdditions.h; sourceTree = "<group>"; };
 		2E82DE711B60E765003BD367 /* NSDataGZipAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataGZipAdditions.m; sourceTree = "<group>"; };
 		2E8A93421B43820900E86BAB /* Other.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = Other.java; sourceTree = "<group>"; };
-		2E8A93451B43EA2F00E86BAB /* NTWebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTWebRequest.h; sourceTree = "<group>"; };
-		2E8A93461B43EA2F00E86BAB /* NTWebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTWebRequest.m; sourceTree = "<group>"; };
-		2ECAE8041B78494B002E8578 /* TLS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLS.h; sourceTree = "<group>"; };
-		2ECAE8051B78494B002E8578 /* TLS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TLS.mm; sourceTree = "<group>"; };
 		2ECDDDB81B7C9A08007208B5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2EF053AE1B56656C00FD86F7 /* NTCryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTCryptUtil.h; sourceTree = "<group>"; };
-		2EF053AF1B56656C00FD86F7 /* NTCryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTCryptUtil.m; sourceTree = "<group>"; };
-		2EF053B11B5689F600FD86F7 /* key.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = key.bin; sourceTree = "<group>"; };
-		2EF053B31B568BC900FD86F7 /* post.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = post.bin; sourceTree = "<group>"; };
 		2EF27BF01B68DBFC00586877 /* DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES.h; sourceTree = "<group>"; };
 		2EF27BF11B68DBFC00586877 /* DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES.m; sourceTree = "<group>"; };
 		2EF27BF61B68F62600586877 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
@@ -197,7 +178,8 @@
 		2EF27BF81B68F62600586877 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		2EFC95721BB027A400C6540C /* DataKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataKVO.h; sourceTree = "<group>"; };
 		2EFC95731BB027A400C6540C /* DataKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataKVO.m; sourceTree = "<group>"; };
-		680B439FDDA90EADE507F4A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D46ABB593B868B2E57383AAA /* libPods-IPhoneDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IPhoneDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E628654A7A58179B0A59CDCF /* Pods-IPhoneDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPhoneDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IPhoneDemo/Pods-IPhoneDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F417B7D91B2AA37900CB2DE5 /* DemoDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDefine.h; sourceTree = "<group>"; };
 		F4E7CA201B27DD02007D535E /* IPhoneDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPhoneDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E7CA241B27DD02007D535E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,7 +204,7 @@
 				2E7019EB1B3D5CB100581E09 /* libz.dylib in Frameworks */,
 				2E52F91F1B32860600A66AF4 /* MapKit.framework in Frameworks */,
 				2E0475291B3016060078F6D8 /* CoreGraphics.framework in Frameworks */,
-				71E58B702FABA3F9400C320C /* libPods.a in Frameworks */,
+				6E7B492AA3B27F0F78EFE5C7 /* libPods-IPhoneDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,16 +315,6 @@
 			path = NTCollection;
 			sourceTree = "<group>";
 		};
-		2E25FC671B429D360081CA9D /* NTResource */ = {
-			isa = PBXGroup;
-			children = (
-				2E25FC681B429D360081CA9D /* Images.xcassets */,
-				2EF053B11B5689F600FD86F7 /* key.bin */,
-				2EF053B31B568BC900FD86F7 /* post.bin */,
-			);
-			path = NTResource;
-			sourceTree = "<group>";
-		};
 		2E25FC6A1B429D5A0081CA9D /* NTView */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,19 +372,6 @@
 			path = NTJava;
 			sourceTree = "<group>";
 		};
-		2E8A93441B43EA0B00E86BAB /* NTWebRequest */ = {
-			isa = PBXGroup;
-			children = (
-				2EF053AE1B56656C00FD86F7 /* NTCryptUtil.h */,
-				2EF053AF1B56656C00FD86F7 /* NTCryptUtil.m */,
-				2E8A93451B43EA2F00E86BAB /* NTWebRequest.h */,
-				2E8A93461B43EA2F00E86BAB /* NTWebRequest.m */,
-				2ECAE8041B78494B002E8578 /* TLS.h */,
-				2ECAE8051B78494B002E8578 /* TLS.mm */,
-			);
-			path = NTWebRequest;
-			sourceTree = "<group>";
-		};
 		B10A7C646E13474673B7E6C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,16 +381,16 @@
 				2E7019EA1B3D5CB100581E09 /* libz.dylib */,
 				2E52F91E1B32860600A66AF4 /* MapKit.framework */,
 				2E0475281B3016060078F6D8 /* CoreGraphics.framework */,
-				076BBA5A9E515A79B49AAF57 /* libPods.a */,
+				D46ABB593B868B2E57383AAA /* libPods-IPhoneDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DCE761AFFC11D4BAD80E09B8 /* Pods */ = {
+		C76EFB62162899FE6855E74B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				113ECB10A3745C4D1491A1FA /* Pods.debug.xcconfig */,
-				680B439FDDA90EADE507F4A8 /* Pods.release.xcconfig */,
+				03BB51A6148E325E54FABD24 /* Pods-IPhoneDemo.debug.xcconfig */,
+				E628654A7A58179B0A59CDCF /* Pods-IPhoneDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -442,8 +401,8 @@
 				B10A7C646E13474673B7E6C4 /* Frameworks */,
 				F4E7CA221B27DD02007D535E /* IPhoneDemo */,
 				F4E7CA3C1B27DD02007D535E /* IPhoneDemoTests */,
-				DCE761AFFC11D4BAD80E09B8 /* Pods */,
 				F4E7CA211B27DD02007D535E /* Products */,
+				C76EFB62162899FE6855E74B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -464,13 +423,11 @@
 				2E7019E41B3D521D00581E09 /* NTJava */,
 				2E52F9301B32A3DE00A66AF4 /* NTMap */,
 				2E0475241B3015790078F6D8 /* NTModel */,
-				2E25FC671B429D360081CA9D /* NTResource */,
 				2E1301021B8D8B4A00C65FF6 /* NTSqlite */,
 				2E0475171B2EE6ED0078F6D8 /* NTTools */,
 				2E25FC6A1B429D5A0081CA9D /* NTView */,
 				2E25FC4D1B429D0A0081CA9D /* NTViewController */,
 				2E25FC451B422C270081CA9D /* NTWax */,
-				2E8A93441B43EA0B00E86BAB /* NTWebRequest */,
 				F4E7CA231B27DD02007D535E /* Supporting Files */,
 				F4E7CA271B27DD02007D535E /* AppDelegate.h */,
 				F4E7CA281B27DD02007D535E /* AppDelegate.m */,
@@ -514,11 +471,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4E7CA431B27DD02007D535E /* Build configuration list for PBXNativeTarget "IPhoneDemo" */;
 			buildPhases = (
-				1CAF8069F87E3AC91EF55A53 /* Check Pods Manifest.lock */,
+				CA75E1A524B47A0EAD151173 /* [CP] Check Pods Manifest.lock */,
 				F4E7CA1C1B27DD02007D535E /* Sources */,
 				F4E7CA1D1B27DD02007D535E /* Frameworks */,
 				F4E7CA1E1B27DD02007D535E /* Resources */,
-				19DE9811B05732C349CA1118 /* Copy Pods Resources */,
+				96D95532F7CB4E6696254361 /* [CP] Embed Pods Frameworks */,
+				F04A398EEED816D9DAB57557 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 				2E7019E51B3D52EC00581E09 /* PBXBuildRule */,
@@ -591,11 +549,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E25FC691B429D360081CA9D /* Images.xcassets in Resources */,
 				2E25FC481B422C280081CA9D /* patch.lua in Resources */,
 				2E25FC491B422C280081CA9D /* NTViewController.lua in Resources */,
-				2EF053B41B568BC900FD86F7 /* post.bin in Resources */,
-				2EF053B21B5689F600FD86F7 /* key.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,34 +564,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19DE9811B05732C349CA1118 /* Copy Pods Resources */ = {
+		96D95532F7CB4E6696254361 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IPhoneDemo/Pods-IPhoneDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1CAF8069F87E3AC91EF55A53 /* Check Pods Manifest.lock */ = {
+		CA75E1A524B47A0EAD151173 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F04A398EEED816D9DAB57557 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IPhoneDemo/Pods-IPhoneDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -653,7 +623,6 @@
 				2E1301081B8D8BE600C65FF6 /* sqlite3.c in Sources */,
 				2E5D2C2B1B46894000AECD7C /* NTCustomAlertView.m in Sources */,
 				2E25FC5C1B429D0A0081CA9D /* NTFlashViewController.m in Sources */,
-				2E7260DC1B9056E200696D91 /* MyInterface.java in Sources */,
 				2E52F92F1B32A3D900A66AF4 /* NTAlbumView.m in Sources */,
 				2E1301071B8D8BE600C65FF6 /* shell.c in Sources */,
 				2EF27BF91B68F62600586877 /* GTMBase64.m in Sources */,
@@ -664,13 +633,10 @@
 				F4E7CA261B27DD02007D535E /* main.m in Sources */,
 				2E25FC4C1B429CF60081CA9D /* NTPictureInfo.m in Sources */,
 				2E25FC5D1B429D0A0081CA9D /* IndexViewController.m in Sources */,
-				2E7019E71B3D558300581E09 /* Test.java in Sources */,
 				2E52F92E1B32A3D900A66AF4 /* NTAlbumPhotoView.m in Sources */,
 				2E3B22EA1B61E55200E2F182 /* NSData+NTBasicAdditions.m in Sources */,
-				2E8A93431B43820900E86BAB /* Other.java in Sources */,
 				2E25FC601B429D0A0081CA9D /* OrderViewController.m in Sources */,
 				2E82DE721B60E765003BD367 /* NSDataGZipAdditions.m in Sources */,
-				2E8A93471B43EA2F00E86BAB /* NTWebRequest.m in Sources */,
 				2E5F11C91B5DEEAF00DC14B3 /* NSObject+SBJSON.m in Sources */,
 				2E25FC5E1B429D0A0081CA9D /* NaviViewController.m in Sources */,
 				2E78E20D1B33BC76003C576A /* NTMapOverlayRender.m in Sources */,
@@ -683,7 +649,6 @@
 				2E52F9361B32A44F00A66AF4 /* ApplicationTools.m in Sources */,
 				2E25FC701B42AC6A0081CA9D /* NTAutoScrollView.m in Sources */,
 				2E52F92D1B32A3D900A66AF4 /* NTAlbumPhotoImageView.m in Sources */,
-				2EF053B01B56656C00FD86F7 /* NTCryptUtil.m in Sources */,
 				2E5F11DB1B5E1EB400DC14B3 /* NSData+AESCrypt.m in Sources */,
 				2E5F11D51B5DEFC800DC14B3 /* SBJsonParser.m in Sources */,
 				2E52F92C1B32A3D900A66AF4 /* NTAlbumController.m in Sources */,
@@ -691,7 +656,6 @@
 				2E5F11DC1B5E1EB400DC14B3 /* NSString+AESCrypt.m in Sources */,
 				2E52F93C1B32A4F800A66AF4 /* NTMapAnnotationView.m in Sources */,
 				2E25FC6D1B429F3A0081CA9D /* NTPullScrollView.m in Sources */,
-				2ECAE8061B78494B002E8578 /* TLS.mm in Sources */,
 				2E82DE6F1B60E508003BD367 /* NSData+IDZGunzip.m in Sources */,
 				2E25FC661B429D230081CA9D /* CollectionTest.m in Sources */,
 			);
@@ -801,7 +765,7 @@
 		};
 		F4E7CA441B27DD02007D535E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 113ECB10A3745C4D1491A1FA /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 03BB51A6148E325E54FABD24 /* Pods-IPhoneDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -810,7 +774,6 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${J2OBJC_HOME}/include\"",
 					"\"${DERIVED_FILES_DIR}\"",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
@@ -822,10 +785,7 @@
 				INFOPLIST_FILE = "IPhoneDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${J2OBJC_HOME}/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -834,7 +794,7 @@
 		};
 		F4E7CA451B27DD02007D535E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 680B439FDDA90EADE507F4A8 /* Pods.release.xcconfig */;
+			baseConfigurationReference = E628654A7A58179B0A59CDCF /* Pods-IPhoneDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -843,7 +803,6 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${J2OBJC_HOME}/include\"",
 					"\"${DERIVED_FILES_DIR}\"",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
@@ -855,10 +814,7 @@
 				INFOPLIST_FILE = "IPhoneDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${J2OBJC_HOME}/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";

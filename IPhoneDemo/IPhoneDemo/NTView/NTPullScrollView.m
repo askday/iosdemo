@@ -5,10 +5,10 @@
 //  Created by wangxiang on 15/6/30.
 //  Copyright (c) 2015年 wx. All rights reserved.
 //
-#import <JLRoutes.h>
 #import "NTCustomAlertView.h"
 #import "NTPullScrollView.h"
-#import "NTWebRequest.h"
+#import <JLRoutes.h>
+//#import "NTWebRequest.h"
 
 @interface NTPullScrollView () <UIWebViewDelegate> {
     UIScrollView *_scrollView;
@@ -52,12 +52,12 @@
         rect.size.height /= 3;
         self.autoScrollView = [[NTAutoScrollView alloc] initWithFrame:rect];
 
-        NSMutableArray *imageArray = [NSMutableArray array];
-        for (int i = 0; i < 4; i++) {
-            UIImage *startupImage = [UIImage imageNamed:[NSString stringWithFormat:@"startup_%d", i + 1]];
-            [imageArray addObject:startupImage];
-        }
-        [autoScrollView setScrollPages:imageArray];
+//        NSMutableArray *imageArray = [NSMutableArray array];
+//        for (int i = 0; i < 4; i++) {
+//            UIImage *startupImage = [UIImage imageNamed:[NSString stringWithFormat:@"startup_%d", i + 1]];
+//            [imageArray addObject:startupImage];
+//        }
+//        [autoScrollView setScrollPages:imageArray];
         [_scrollView addSubview:autoScrollView];
 
         rect.origin.y += rect.size.height;
@@ -95,8 +95,8 @@
 
 - (void)checkInTest
 {
-    NTWebRequest *webRequest = [[NTWebRequest alloc] init];
-    [webRequest doCheckInTest];
+    //    NTWebRequest *webRequest = [[NTWebRequest alloc] init];
+    //    [webRequest doCheckInTest];
     //    NSLog(@"=================================");
     //    [webRequest doHttpCommonRequest];
 }

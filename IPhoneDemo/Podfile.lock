@@ -2,78 +2,52 @@ PODS:
   - AFNetworking (1.3.4)
   - Aspects (1.4.1)
   - CommonCrypto (1.1)
-  - J2ObjC (0.9.7):
-    - J2ObjC/lib/jre (= 0.9.7)
-  - J2ObjC/lib/jre (0.9.7)
-  - JLRoutes (1.5.2)
+  - JLRoutes (1.5.5)
   - JSONKit-NoWarning (1.2)
-  - LDCommonLibrary (1.0.4):
-    - LDCommonLibrary/nt_arch (= 1.0.4)
-    - LDCommonLibrary/nt_basic_additions (= 1.0.4)
-    - LDCommonLibrary/nt_basic_utils (= 1.0.4)
-    - LDCommonLibrary/nt_controller (= 1.0.4)
-    - LDCommonLibrary/nt_introspection (= 1.0.4)
-    - LDCommonLibrary/nt_ui (= 1.0.4)
-  - LDCommonLibrary/nt_arch (1.0.4):
+  - LDCommonLibrary (1.1.0):
+    - LDCommonLibrary/nt_arch (= 1.1.0)
+    - LDCommonLibrary/nt_basic_additions (= 1.1.0)
+    - LDCommonLibrary/nt_basic_utils (= 1.1.0)
+    - LDCommonLibrary/nt_controller (= 1.1.0)
+    - LDCommonLibrary/nt_introspection (= 1.1.0)
+    - LDCommonLibrary/nt_ui (= 1.1.0)
+  - LDCommonLibrary/nt_arch (1.1.0):
     - LDCommonLibrary/nt_basic_additions
     - LDCommonLibrary/nt_basic_utils
-  - LDCommonLibrary/nt_basic_additions (1.0.4)
-  - LDCommonLibrary/nt_basic_utils (1.0.4)
-  - LDCommonLibrary/nt_controller (1.0.4):
+  - LDCommonLibrary/nt_basic_additions (1.1.0)
+  - LDCommonLibrary/nt_basic_utils (1.1.0)
+  - LDCommonLibrary/nt_controller (1.1.0):
     - LDCommonLibrary/nt_basic_additions
     - LDCommonLibrary/nt_basic_utils
     - LDCommonLibrary/nt_ui
-  - LDCommonLibrary/nt_introspection (1.0.4):
+  - LDCommonLibrary/nt_introspection (1.1.0):
     - LDCommonLibrary/nt_basic_additions
     - LDCommonLibrary/nt_basic_utils
-  - LDCommonLibrary/nt_ui (1.0.4):
+  - LDCommonLibrary/nt_ui (1.1.0):
     - LDCommonLibrary/nt_basic_additions
     - LDCommonLibrary/nt_basic_utils
   - LDJSBridge (1.0.7)
-  - Masonry (0.6.2)
-  - MMPlaceHolder (1.8)
-  - MobileAnalysis (1.1.0):
+  - Masonry (0.6.4)
+  - MMPlaceHolder (1.9)
+  - MobileAnalysis (1.2.0):
     - Aspects (~> 1.4)
     - JSONKit-NoWarning (~> 1.2)
     - Reachability
-  - MPCoachMarks (0.0.7)
-  - NetEasePatch (2.0.5):
-    - NetEasePatch/patch (= 2.0.5)
-    - NetEasePatch/Wax (= 2.0.5)
-  - NetEasePatch/patch (2.0.5):
-    - NetEasePatch/Wax
-    - ZipArchive (~> 1.3.0)
-  - NetEasePatch/Wax (2.0.5):
-    - NetEasePatch/Wax/AOPAspect (= 2.0.5)
-    - NetEasePatch/Wax/extensions (= 2.0.5)
-    - NetEasePatch/Wax/lua (= 2.0.5)
-    - NetEasePatch/Wax/wax (= 2.0.5)
-  - NetEasePatch/Wax/AOPAspect (2.0.5)
-  - NetEasePatch/Wax/extensions (2.0.5):
-    - NetEasePatch/Wax/lua
-    - NetEasePatch/Wax/wax
-  - NetEasePatch/Wax/lua (2.0.5)
-  - NetEasePatch/Wax/wax (2.0.5):
-    - NetEasePatch/Wax/AOPAspect
-    - NetEasePatch/Wax/lua
+  - MPCoachMarks (0.0.10)
   - NimbusKit-AttributedLabel (1.0.0)
   - NSData+Base64 (1.0.0)
   - Reachability (3.2)
   - SBJson (4.0.2)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
-  - UIToast (0.0.2)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - UIToast (0.0.3)
   - ZipArchive (1.3.0)
-  - ZXingObjC (3.1.0):
-    - ZXingObjC/All (= 3.1.0)
-  - ZXingObjC/All (3.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.3.0)
   - Aspects
   - CommonCrypto (~> 1.1)
-  - J2ObjC (from `/Users/wangxiang/workspace/tools/J2ObjC`)
   - JLRoutes
   - JSONKit-NoWarning
   - LDCommonLibrary (from `https://git.ms.netease.com/commonlibraryios/ntcommonlibrary.git`)
@@ -82,7 +56,6 @@ DEPENDENCIES:
   - MMPlaceHolder
   - MobileAnalysis
   - MPCoachMarks (~> 0.0.7)
-  - NetEasePatch
   - NimbusKit-AttributedLabel (~> 1.0.0)
   - NSData+Base64 (~> 1.0.0)
   - Reachability (~> 3.2)
@@ -90,40 +63,36 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7.3)
   - UIToast (~> 0.0.2)
   - ZipArchive (~> 1.3.0)
-  - ZXingObjC (~> 3.1.0)
 
 EXTERNAL SOURCES:
-  J2ObjC:
-    :path: "/Users/wangxiang/workspace/tools/J2ObjC"
   LDCommonLibrary:
     :git: https://git.ms.netease.com/commonlibraryios/ntcommonlibrary.git
 
 CHECKOUT OPTIONS:
   LDCommonLibrary:
-    :commit: 763cace8728af3889140cd081fbbeeaec7ffddef
+    :commit: bc095db7acdb04f85f9a928663a0a4e50f4f46e7
     :git: https://git.ms.netease.com/commonlibraryios/ntcommonlibrary.git
 
 SPEC CHECKSUMS:
   AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   CommonCrypto: e18c8416332cca5efe80c197f2a522d471c42626
-  J2ObjC: 4f71aa7903976011c17fdfab7211d75ef2d37725
-  JLRoutes: fc36fd38ab476d5ac3a6a84b05be60e4b1a2bc81
+  JLRoutes: d191a496b820f60d70225202d04289582da962df
   JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
-  LDCommonLibrary: c70e0fed93a024a4f7e6ad39635551cd04914870
+  LDCommonLibrary: 0ccb6ad857b8fa1fac5debbfdf99bbe4d624bb5e
   LDJSBridge: 02fac2511533e4140c9d7a3f5bdbc8126a62e2d5
-  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
-  MMPlaceHolder: 6dbbd7d0dbaaa556eefbc75b8039fcd9f9cd576a
-  MobileAnalysis: bf23626c36e64730fef6b53abb6b4bdb98a007ea
-  MPCoachMarks: 71e28c2841a4f3e89331cb9f4124dc33ec4c3f0b
-  NetEasePatch: bff4a7b06fbea8ea57311283749eb78d23e3bc3c
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MMPlaceHolder: 40212b9dfe8760134b1b2fce3232f0d46200178f
+  MobileAnalysis: 914d35ec3067f9615c42ad8421ebdcfc55cff3d5
+  MPCoachMarks: a398633622eff4ccd2902a1b8747c9053d9670bb
   NimbusKit-AttributedLabel: b07b1f99ba46801a1c0d32c43a3a044fdda46c15
   NSData+Base64: 4e84902c4db907a15673474677e57763ef3903e4
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SBJson: c18691cc18375b14664ff0fec841f8c4faef1934
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  UIToast: 1fa08a3d167d2d2a66083c78adb1cad22b260ba9
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  UIToast: e6956e0a1018ead3c833b65bee30701305a7b499
   ZipArchive: c8bd32d0b8f1ada4ac967b72ceca8130d680adc5
-  ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 3212c59c9dff236a0ae44a50c29e69ad588e3cd5
+
+COCOAPODS: 1.0.1

@@ -10,11 +10,13 @@ source 'https://git.ms.netease.com/commonlibraryios/podspec.git'
 platform :ios, '6.0'
 inhibit_all_warnings!
 
+target 'IPhoneDemo' do
+
 pod 'AFNetworking','~>1.3.0'
 
 pod 'JLRoutes'
 pod 'LDJSBridge'
-pod 'NetEasePatch'
+#pod 'NetEasePatch'
 pod 'SDWebImage', '~> 3.7.3'
 
 
@@ -28,7 +30,7 @@ pod 'Reachability','~>3.2'
 
 pod 'ZipArchive','~>1.3.0'
 
-pod 'J2ObjC' ,:path=>'/Users/wangxiang/workspace/tools/J2ObjC'
+#pod 'J2ObjC' ,:path=>'/Users/wangxiang/workspace/tools/J2ObjC'
 
 pod 'LDCommonLibrary', :git =>'https://git.ms.netease.com/commonlibraryios/ntcommonlibrary.git'
 
@@ -46,8 +48,10 @@ pod 'SBJson','~>4.0.2'
 
 pod 'UIToast','~>0.0.2'
 
-pod 'ZXingObjC', '~> 3.1.0'
+#pod 'ZXingObjC', '~> 3.1.0'
 
 pod 'Masonry', '~> 0.6.2'
 
 pod 'MMPlaceHolder'
+
+end

@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 wx. All rights reserved.
 //
 
-#import "OrderViewController.h"
-#import "DemoDefine.h"
-#import "Masonry.h"
 #import "DataKVO.h"
+#import "DemoDefine.h"
 #import "MMPlaceHolder.h"
+#import "Masonry.h"
+#import "OrderViewController.h"
 
 @interface OrderViewController () <UIAlertViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate>
 @property (nonatomic, strong) UITextField *txtInput;
@@ -52,9 +52,9 @@
     [_txtInput addTarget:self action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:_txtInput];
     [_txtInput mas_makeConstraints:^(MASConstraintMaker *make) {
-      make.centerX.equalTo(self.view.mas_centerX);
-      make.centerY.equalTo(self.view.mas_centerY).offset(-140);
-      make.size.mas_equalTo(CGSizeMake(150, 40));
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.centerY.equalTo(self.view.mas_centerY).offset(-140);
+        make.size.mas_equalTo(CGSizeMake(150, 40));
     }];
 
     self.kvo = [[DataKVO alloc] init];
@@ -77,9 +77,9 @@
         [btn addTarget:self action:NSSelectorFromString(subArray[2]) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.size.mas_equalTo(CGSizeMake(150, 40));
-          make.centerX.equalTo(preView.mas_centerX);
-          make.top.equalTo(preView.mas_bottom).offset(10);
+            make.size.mas_equalTo(CGSizeMake(150, 40));
+            make.centerX.equalTo(preView.mas_centerX);
+            make.top.equalTo(preView.mas_bottom).offset(10);
         }];
         preView = btn;
     }
@@ -168,6 +168,7 @@
     strUrl = @"cf163://mainUser/userAccount?isHeadNeedRefresh=1";
     strUrl = @"cf163://mainUser/userAssets";
     strUrl = @"cf163://mainUser/aboutUs";
+    strUrl = @"cf163://creditorDetail?rate=8.0&namePrefix=银亿1号0621";
     NSURL *url = [NSURL URLWithString:strUrl];
     if ([[UIApplication sharedApplication]
             canOpenURL:url]) {
@@ -178,7 +179,7 @@
 - (void)btnNotifyTestClick
 {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
-        UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound)categories:nil];
+        UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:userNotificationSettings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
 

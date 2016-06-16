@@ -5,11 +5,11 @@
 //  Created by wx on 15-6-10.
 //  Copyright (c) 2015年 wx. All rights reserved.
 //
-#import "Test.h"
-#import "NTWebRequest.h"
+//#import "Test.h"
 #import "AppDelegate.h"
 #import "DemoDefine.h"
 #import "NTFlashViewController.h"
+//#import "NTWebRequest.h"
 #import "TabViewController.h"
 //#import <NetEasePatch/LDPatchService.h>
 #import <JLRoutes.h>
@@ -32,20 +32,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
     //j2objc代码调试
-    NTTest *test = [[NTTest alloc] init];
+    //    NTTest *test = [[NTTest alloc] init];
     //普通调用以及包含oc代码引用的调用
-    [test doSomeThing];
+    //    [test doSomeThing];
     //函数传参
-    int result = [test getIntegerValueWithInt:10];
-    NSLog(@"%d===", result);
-    [test callOtherJava];
+    //    int result = [test getIntegerValueWithInt:10];
+    //    NSLog(@"%d===", result);
+    //    [test callOtherJava];
     //静态函数测试
-    [NTTest staticFuncTest];
+    //    [NTTest staticFuncTest];
 
     //java反射测试
-    [test doReflectionTest];
+    //    [test doReflectionTest];
 
-    [test doThreadTest];
+    //    [test doThreadTest];
 
     NSDictionary *appDictionary = [[NSBundle mainBundle] infoDictionary];
     float currentAppVersion = [[NSUserDefaults standardUserDefaults] floatForKey:@"currentAppVersion"];
@@ -82,9 +82,9 @@
     //jurlroute 实践
     [JLRoutes addRoute:@"/demo"
                handler:^BOOL(NSDictionary *parameters) {
-                 NSString *userID = parameters[@"userID"];
-                 NSLog(@"%@", userID);
-                 return YES;
+                   NSString *userID = parameters[@"userID"];
+                   NSLog(@"%@", userID);
+                   return YES;
                }];
 
     return YES;
@@ -140,12 +140,12 @@
         delay:0.0f
         options:UIViewAnimationOptionCurveEaseIn
         animations:^{
-          _flashViewController.view.transform = CGAffineTransformMakeScale(3.0, 3.0);
-          _flashViewController.view.alpha = 0.0f;
+            _flashViewController.view.transform = CGAffineTransformMakeScale(3.0, 3.0);
+            _flashViewController.view.alpha = 0.0f;
         }
         completion:^(BOOL finished) {
-          [_flashViewController.view removeFromSuperview];
-          _flashViewController = nil;
+            [_flashViewController.view removeFromSuperview];
+            _flashViewController = nil;
         }];
 }
 

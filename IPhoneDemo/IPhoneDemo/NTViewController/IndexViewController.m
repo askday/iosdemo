@@ -63,9 +63,9 @@
     btnShowCamera.backgroundColor = [UIColor redColor];
     [_pullScrollView addView:btnShowCamera];
 
-    for (int i = 0; i < self.view.subviews.count; i++) {
-        NSLog(@"%@", [[self.view.subviews objectAtIndex:i] class]);
-    }
+//    for (int i = 0; i < self.view.subviews.count; i++) {
+//        NSLog(@"%@", [[self.view.subviews objectAtIndex:i] class]);
+//    }
 }
 
 - (void)didReceiveMemoryWarning
