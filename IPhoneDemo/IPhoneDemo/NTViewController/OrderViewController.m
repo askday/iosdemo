@@ -6,18 +6,88 @@
 //  Copyright (c) 2015年 wx. All rights reserved.
 //
 
+#import "CSAnimationView.h"
 #import "DataKVO.h"
 #import "DemoDefine.h"
 #import "MMPlaceHolder.h"
 #import "Masonry.h"
 #import "OrderViewController.h"
 
-@interface OrderViewController () <UIAlertViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate>
-@property (nonatomic, strong) UITextField *txtInput;
+
+@interface ThirdController : UIViewController
+@property (nonatomic, strong) UIButton *btnTest;
+@end
+
+@implementation ThirdController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor greenColor];
+
+    self.btnTest = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.btnTest.frame = CGRectMake(100, 100, 100, 100);
+    [_btnTest setTitle:@"test" forState:UIControlStateNormal];
+    [_btnTest addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_btnTest];
+}
+
+- (void)btnClick
+{
+    [self dismissViewControllerAnimated:self completion:nil];
+}
+
+//UIPopoverController 是它的 contentViewController，即 UIPopoverPresentationController 的默认的 delegate
+//
+// 这里有一个 bug：当双击 diming 视图时，presentation 视图控制器将调用两次
+// dismissViewControllerAnimated:completion:，并 dismiss 掉它的父控制器.
+//
+// 通过实现这个 delegate 可以让代码运行另一条正确地检查了是否正在 dismiss 的代码路径
+// rdar://problem/19067761
+- (BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
+{
+    return YES;
+}
+@end
+
+@interface SecViewController : UIViewController
+@property (nonatomic, strong) UIButton *btnTest;
+@end
+
+@implementation SecViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blueColor];
+    self.btnTest = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.btnTest.frame = CGRectMake(100, 100, 100, 100);
+    [_btnTest setTitle:@"test" forState:UIControlStateNormal];
+    [_btnTest addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_btnTest];
+}
+
+- (void)btnClick
+{
+    ThirdController *controller = [[ThirdController alloc] init];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+@end
+
+
+@interface OrderViewController () <UIAlertViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate, UIScrollViewDelegate>
+@property (nonatomic, strong) UITextField *
+    txtInput;
 @property (nonatomic, strong) NSArray *btnArrays;
 @property (nonatomic, strong) UIViewController *controller;
-
+@property (nonatomic, strong) CSAnimationView *animationView;
 @property (nonatomic, strong) DataKVO *kvo;
+
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UILabel *lblSize;
+@property (nonatomic, strong) UILabel *lblContentInset;
+@property (nonatomic, strong) UILabel *lblContentOffset;
+
 @end
 
 @implementation OrderViewController
@@ -66,7 +136,9 @@
                         @[ @2, @"跳转到众筹", @"btnToCrowFundingClick" ],
                         @[ @3, @"presentTest", @"btnPresentTestClick" ],
                         @[ @4, @"KVO Test", @"btnKVOTestClick" ],
-                        @[ @5, @"模拟推送", @"btnNotifyTestClick" ] ];
+                        @[ @5, @"模拟推送", @"btnNotifyTestClick" ],
+                        @[ @6, @"present", @"btnPresentTestClick1" ],
+                        @[ @7, @"scrollView", @"btnScrollerViewText" ] ];
 
     UIView *preView = _txtInput;
     for (int i = 0; i < _btnArrays.count; i++) {
@@ -85,6 +157,22 @@
     }
 
     [self.view showPlaceHolder];
+
+    self.animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 400, 100, 100)];
+
+    self.animationView.backgroundColor = [UIColor redColor];
+
+    self.animationView.duration = 0.5;
+    self.animationView.delay = 0;
+    self.animationView.type = CSAnimationTypeBounceDown;
+
+    [self.view addSubview:self.animationView];
+
+    // Add your subviews into animationView
+    // [animationView addSubview:<#(UIView *)#>]
+
+    // Kick start the animation immediately
+    [self.animationView startCanvasAnimation];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -125,23 +213,24 @@
 
 - (void)btnTestClick
 {
-    [_txtInput resignFirstResponder];
-    //    if ([[[UIDevice currentDevice] systemVersion] intValue] >= 8.0) {
-    //        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert];
-    //        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
-    //                                                               style:UIAlertActionStyleDefault
-    //                                                             handler:^(UIAlertAction *action) {
-    //                                                               UIViewController *controller = [[UIViewController alloc] init];
-    //                                                               [self.navigationController pushViewController:controller animated:YES];
-    //                                                             }];
-    //
-    //        [alert addAction:cancelAction];
-    //        [self presentViewController:alert animated:YES completion:nil];
-    //    }
-    //    else {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"cacel" otherButtonTitles:nil, nil];
-    [alert becomeFirstResponder];
-    [alert show];
+    [self.animationView startCanvasAnimation];
+    //    [_txtInput resignFirstResponder];
+    //    //    if ([[[UIDevice currentDevice] systemVersion] intValue] >= 8.0) {
+    //    //        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert];
+    //    //        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+    //    //                                                               style:UIAlertActionStyleDefault
+    //    //                                                             handler:^(UIAlertAction *action) {
+    //    //                                                               UIViewController *controller = [[UIViewController alloc] init];
+    //    //                                                               [self.navigationController pushViewController:controller animated:YES];
+    //    //                                                             }];
+    //    //
+    //    //        [alert addAction:cancelAction];
+    //    //        [self presentViewController:alert animated:YES completion:nil];
+    //    //    }
+    //    //    else {
+    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"cacel" otherButtonTitles:nil, nil];
+    //    [alert becomeFirstResponder];
+    //    [alert show];
     //    }
 }
 
@@ -169,7 +258,7 @@
     strUrl = @"cf163://mainUser/userAssets";
     strUrl = @"cf163://mainUser/aboutUs";
     strUrl = @"cf163://creditorDetail?rate=8.0&namePrefix=银亿1号0621";
-    NSURL *url = [NSURL URLWithString:strUrl];
+    NSURL *url = [NSURL URLWithString:[strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     if ([[UIApplication sharedApplication]
             canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
@@ -211,6 +300,60 @@
         //添加推送到UIApplication
         UIApplication *app = [UIApplication sharedApplication];
         [app scheduleLocalNotification:notification];
+    }
+}
+
+- (void)btnPresentTestClick1
+{
+    SecViewController *controller = [[SecViewController alloc] init];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)btnScrollerViewText
+{
+    UIViewController *controller = [UIViewController new];
+    self.scrollView = [[UIScrollView alloc] init];
+    self.scrollView.clipsToBounds = YES;
+    self.scrollView.delegate = self;
+    //    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.5);
+    self.scrollView.backgroundColor = [UIColor yellowColor];
+    [controller.view addSubview:self.scrollView];
+    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(controller.view);
+        make.width.equalTo(controller.view).dividedBy(2);
+        make.height.equalTo(@(100));
+    }];
+
+    UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    text.backgroundColor = [UIColor greenColor];
+    text.text = @"123";
+//    [self.scrollView addSubview:text];
+    self.lblSize = [[UILabel alloc] init];
+
+    self.lblSize.frame = CGRectMake(0, 80, SCREEN_WIDTH, 30);
+    [controller.view addSubview:self.lblSize];
+
+
+    self.lblContentInset = [[UILabel alloc] init];
+
+    self.lblContentInset.frame = CGRectMake(0, 115, SCREEN_WIDTH, 30);
+    [controller.view addSubview:self.lblContentInset];
+
+    self.lblContentOffset = [[UILabel alloc] init];
+
+    self.lblContentOffset.frame = CGRectMake(0, 160, SCREEN_WIDTH, 30);
+    [controller.view addSubview:self.lblContentOffset];
+
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+#pragma mark UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.scrollView) {
+        [self.lblSize setText:[NSString stringWithFormat:@"contentSize:%@", NSStringFromCGSize(self.scrollView.contentSize)]];
+        [self.lblContentInset setText:[NSString stringWithFormat:@"contentInset:%@", NSStringFromUIEdgeInsets(self.scrollView.contentInset)]];
+        [self.lblContentOffset setText:[NSString stringWithFormat:@"contentOffset:%@", NSStringFromCGPoint(self.scrollView.contentOffset)]];
     }
 }
 

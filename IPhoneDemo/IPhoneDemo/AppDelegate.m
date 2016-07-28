@@ -11,8 +11,9 @@
 #import "NTFlashViewController.h"
 //#import "NTWebRequest.h"
 #import "TabViewController.h"
-//#import <NetEasePatch/LDPatchService.h>
 #import <JLRoutes.h>
+#import "LDPatchService.h"
+#import "nt_basic_additions.h"
 
 @interface AppDelegate () <UIGestureRecognizerDelegate> {
     NTFlashViewController *_flashViewController;
@@ -73,7 +74,8 @@
     [window makeKeyAndVisible];
 
     //wax框架代码引用测试
-    //        [[LDPatchService sharedManager] startNetpatchWithAppcode:[appDictionary objectForKey:@"CFBundleShortVersionString"] andAppVersion:[appDictionary objectForKey:@"CFBundleVersion"]];
+    //启动wax框架
+    [[LDPatchService sharedManager] startNetpatchWithAppcode:@"===" andAppVersion:@"1" andDeviceId:[UIDevice uniqueDeviceId]];
 
     UITapGestureRecognizer *tabbed = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     tabbed.delegate = self;
